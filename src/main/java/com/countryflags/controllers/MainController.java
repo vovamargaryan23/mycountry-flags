@@ -15,7 +15,7 @@ public class MainController {
 
 
     @GetMapping("/countries/{countryName}")
-    public String getCountryFlag(@PathVariable(value = "") String countryName) throws IOException {
+    public String getCountryFlag(@PathVariable String countryName) throws IOException {
         URL url = new URL( "https://restcountries.eu/rest/v2/name/"+ countryName + "?fields=flag" );
         URLConnection conn = url.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
